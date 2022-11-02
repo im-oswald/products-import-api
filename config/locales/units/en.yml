@@ -1,0 +1,18 @@
+# we are converting user possible inputs to the 1 ruby-unit gem accepts
+# in case of any new unit an entry here would be require
+# along with key as gem supported and value(s) as user possible inputs
+# system will use this mapping to convert values into
+en:
+  units:
+    defaults:
+      kg:
+        - kgs
+        - kilogram
+        - kilograms
+      g:
+        - gram
+        - grams
+      lbs:
+        - lb
+        - pound
+        - pounds
