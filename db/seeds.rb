@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,9 +17,9 @@ categories = (1..5).map do |i|
   )
 end
 
-employee = (1..50).map do
+(1..50).map do
   Product.create!(
-    upc: "DAY-1A406020000607D000003322",
+    upc: 'DAY-1A406020000607D000003322',
     import_date: DateTime.now,
     weight: 88,
     category: categories.sample,

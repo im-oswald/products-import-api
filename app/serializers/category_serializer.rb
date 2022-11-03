@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CategorySerializer < ActiveModel::Serializer
   attributes :id, :name, :total_weight, :products
 
@@ -6,7 +8,7 @@ class CategorySerializer < ActiveModel::Serializer
   end
 
   def products
-    products = object.products.map do |product|
+    object.products.map do |product|
       {
         id: product.id,
         upc: product.upc,

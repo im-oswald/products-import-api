@@ -1,4 +1,0 @@
-{
-  id:       category.id,
-  name:     category.name
-}

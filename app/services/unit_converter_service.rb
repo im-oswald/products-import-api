@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UnitConverter
+class UnitConverterService
   SUPPORTED_UNITS = I18n.t('units.defaults').with_indifferent_access.freeze
 
   attr_reader :value, :unit, :conversion_unit
@@ -20,7 +20,7 @@ class UnitConverter
 
     convert
   rescue StandardError => e
-    Exceptions.print_error e
+    Rails.logger.error "EXCEPTION: #{e}"
   end
 
   private
@@ -32,11 +32,11 @@ class UnitConverter
   end
 
   def sanitize_value
-    return prepare_unit(unit) if SUPPORTED_UNITS.keys.include?(unit)
+    return prepare_unit(unit) if SUPPORTED_UNITS.key?(unit)
 
-    supported_unit = SUPPORTED_UNITS.find{ |key, value| value.include?(unit) }&.first
+    supported_unit = SUPPORTED_UNITS.find { |_key, value| value.include?(unit) }&.first
 
-    raise "Unsupported format for conversion" unless supported_unit
+    raise 'Unsupported format for conversion' unless supported_unit
 
     prepare_unit(supported_unit)
   end

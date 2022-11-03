@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,27 +12,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_01_175323) do
-
+ActiveRecord::Schema.define(version: 20_221_101_175_323) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "categories", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'categories', force: :cascade do |t|
+    t.string 'name', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "products", force: :cascade do |t|
-    t.string "upc", null: false
-    t.datetime "import_date", null: false
-    t.float "weight", default: 0.0, null: false
-    t.string "unit", null: false
-    t.bigint "category_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_products_on_category_id"
+  create_table 'products', force: :cascade do |t|
+    t.string 'upc', null: false
+    t.datetime 'import_date', null: false
+    t.float 'weight', default: 0.0, null: false
+    t.string 'unit', null: false
+    t.bigint 'category_id', null: false
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['category_id'], name: 'index_products_on_category_id'
   end
 
-  add_foreign_key "products", "categories"
+  add_foreign_key 'products', 'categories'
 end
