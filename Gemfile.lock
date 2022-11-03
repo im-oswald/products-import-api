@@ -74,7 +74,21 @@ GEM
       activesupport
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
+    diff-lcs (1.5.0)
     erubi (1.11.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
+    faker (3.0.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -151,6 +165,23 @@ GEM
       ffi (~> 1.0)
     regexp_parser (2.6.0)
     rexml (3.2.5)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-mocks (3.12.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.12.0)
+    rspec-rails (6.0.1)
+      actionpack (>= 6.1)
+      activesupport (>= 6.1)
+      railties (>= 6.1)
+      rspec-core (~> 3.11)
+      rspec-expectations (~> 3.11)
+      rspec-mocks (~> 3.11)
+      rspec-support (~> 3.11)
+    rspec-support (3.12.0)
     rubocop (1.38.0)
       json (~> 2.3)
       parallel (~> 1.10)
@@ -174,6 +205,8 @@ GEM
       rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
     ruby-units (3.0.0)
+    shoulda-matchers (5.2.0)
+      activesupport (>= 5.2.0)
     spring (4.1.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
@@ -198,6 +231,9 @@ DEPENDENCIES
   active_model_serializers
   bootsnap (>= 1.4.4)
   byebug
+  database_cleaner
+  factory_bot_rails
+  faker
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pg (~> 1.1)
@@ -205,11 +241,13 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.6)
   rails-i18n
+  rspec-rails
   rubocop
   rubocop-performance
   rubocop-rails
   rubocop-rspec
   ruby-units
+  shoulda-matchers
   spring
   tzinfo-data
 

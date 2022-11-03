@@ -34,3 +34,15 @@ Lint/AmbiguousBlockAssociation:
 
 Style/Documentation:
   Enabled: false
+
+Rails/FilePath:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Enabled: false
+
+Lint/ShadowingOuterLocalVariable:
+  Enabled: false
