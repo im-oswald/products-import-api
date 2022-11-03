@@ -8,11 +8,11 @@ class CategorySerializer < ActiveModel::Serializer
   end
 
   def products
-    object.products.map do |product|
+    object.products.limit(2).map do |product|
       {
         id: product.id,
         upc: product.upc,
-        date: product.import_date,
+        import_date: product.import_date,
         weight: product.weight,
         unit: product.unit
       }
